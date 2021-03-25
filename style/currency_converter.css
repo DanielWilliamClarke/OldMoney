@@ -1,0 +1,80 @@
+
+#currency_converter
+{
+	width: 750px;
+	margin: 0 auto;
+	display: grid;
+	background-color: #E1E1E8;
+	padding: 20px;
+	box-shadow: 0 0 25px #222222;
+	border-radius: 2px;
+}
+
+.currency_converter_title
+{
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.currency_converter_sub_title
+{
+	font-size: 15px;
+	text-align: right;
+}
+
+.currency_converter_container
+{
+	margin: 25px auto;
+}
+
+.currency_converter_container .input_container
+{
+	float: left;
+	margin: 0 5px;
+}
+
+.currency_converter_input_title
+{
+	font-weight: 600;
+}
+
+.output_text
+{
+	color: green;
+	font-weight: 600;
+}
+
+.input_selector
+{
+	width: 100%;
+}
+
+.base_currency_rates
+{
+	clear: both;
+	text-align: justify;
+}
+
+.base_currency_rates .input_container
+{
+	margin: 5px 0;
+}
+
+.currency_rates_list
+{
+	margin: 0 0 20px 0;
+}
+
+.base_currency_rates .currency_rate
+{
+	float: left;
+	margin: 0 5px;
+	width: 140px;
+}
+
+.base_currency_rates .currency_rate:first-child
+{
+	color: blue;
+	font-weight: 900;
+	font-size: 25px;
+}

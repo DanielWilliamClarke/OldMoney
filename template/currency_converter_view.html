@@ -1,0 +1,76 @@
+<script>
+	/* here I load in the app entry point and binding the view and view model together */
+  require(["jquery", "currencyConverterApp"], function ($, currencyConverterApp) {
+    $(document).ready(function () {
+      currencyConverterApp.Load();
+    });
+  });
+</script>
+
+<!-- link style -->
+<link rel="stylesheet" href="style/currency_converter.css" type="text/css"/>
+
+<!-- Create View Template -->
+<div id="currency_converter">
+	
+	<!-- titles -->
+	<div class="currency_converter_title">
+		Developer Get Together Currency Converter Demo
+	</div>
+	
+	<div class="currency_converter_sub_title">
+		Using RequireJS, KnockoutJS Front End, and Composer Packages and Autoloading Back End
+	</div>
+	
+	<!-- Currency Conversion Form -->
+	<div class="currency_converter_container">
+		
+		<div class="input_container currency_converter_input">
+			<div class="currency_converter_input_title">
+				Amount To Convert
+			</div>
+			<input type="text" class="input_text" data-bind="value: inputAmount"/>
+		</div>
+		
+		<div class="input_container currency_converter_selector">
+			<div class="currency_converter_input_title">
+				Current Currency
+			</div>
+			<select class="input_selector" data-bind="options: availableCurrencies, value: selectedInputCurrency, optionsCaption: 'Select Currency...'"></select>
+		</div>
+		
+		<div class="input_container currency_converter_selector">
+			<div class="currency_converter_input_title">
+				Required Currency
+			</div>
+			<select class="input_selector" data-bind="options: availableCurrencies, value: selectedOutputCurrency, optionsCaption: 'Select Currency...'"></select>
+		</div>
+		
+		<div class="input_container currency_converter_output">
+			<div class="currency_converter_input_title">
+				Converted Amount
+			</div>
+			<div class="output_text" data-bind="text: outputAmount"></div>
+		</div>
+	</div>
+	
+	<!-- Currency Comparison List -->
+	<div class="base_currency_rates">
+		<div class="currency_converter_title">
+			Currency Comparison
+		</div>
+		
+		<div class="input_container currency_converter_selector">
+			<div class="currency_converter_input_title">
+				Change Currency
+			</div>
+			<select class="input_selector" data-bind="options: availableCurrencies, value: selectedBaseCurrency, optionsCaption: 'Select Currency...'"></select>
+		</div>
+		
+		<div class="currency_rates_list" data-bind="foreach: sortedBaseRates">
+			<div class="currency_rate">
+				<b><span data-bind="text: currency"></span></b>: <span data-bind="text: baseValue"></span>
+			</div>
+		</div>
+	</div>
+</div>
